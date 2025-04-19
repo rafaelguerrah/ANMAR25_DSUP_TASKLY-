@@ -4,8 +4,7 @@ import { z } from 'zod'
 const taskSchema = z.object({
   title: z.string().min(3).max(100),
   description: z.string().min(3).max(500),
-  category: z.string().max(50),
-  priority: z.enum(['low', 'medium', 'high']),
+  priority: z.enum(['LOW', 'MEDIUM', 'HIGH']),
   status: z.enum(['TODO', 'IN_PROGRESS', 'DONE']),
 })
 
@@ -23,7 +22,7 @@ export class TaskService {
     return this.repository.findAll({ page, limit })
   }
 
-  async findById(id: number) {
+  async findById(id: string) {
     return this.repository.findById(id)
   }
 
@@ -31,12 +30,12 @@ export class TaskService {
     return this.repository.findByStatus(status)
   }
 
-  async update(id: number, data: any) {
+  async update(id: string, data: any) {
     const validated = taskSchema.partial().parse(data)
     return this.repository.update(id, validated)
   }
 
-  async delete(id: number) {
+  async delete(id: string) {
     return this.repository.delete(id)
   }
 }

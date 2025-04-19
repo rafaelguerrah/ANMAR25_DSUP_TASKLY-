@@ -1,17 +1,11 @@
+
 import { z } from 'zod'
 
 export const createTaskSchema = z.object({
   title: z.string().min(1).max(100),
-  description: z.string().min(1).max(255),
-  status: z.enum(['Todo', 'In Progress', 'Done']).optional(),
-  priority: z.number().min(1).max(5),
-  category: z.string().min(1).max(50),
+  description: z.string().min(1).max(255).optional(),
+  status: z.enum(['TODO', 'IN_PROGRESS', 'DONE']).optional(),
+  priority: z.enum(['LOW', 'MEDIUM', 'HIGH']).optional(),
 })
 
-export const updateTaskSchema = z.object({
-  title: z.string().min(1).max(100).optional(),
-  description: z.string().min(1).max(255).optional(),
-  status: z.enum(['Todo', 'In Progress', 'Done']).optional(),
-  priority: z.number().min(1).max(5).optional(),
-  category: z.string().min(1).max(50).optional(),
-})
+export const updateTaskSchema = createTaskSchema.partial()

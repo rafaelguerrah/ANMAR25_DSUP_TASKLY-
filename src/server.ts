@@ -4,6 +4,8 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 const PORT = 3000;
 
+
+
 prisma.$connect()
   .then(() => {
     app.listen(PORT, () => {
