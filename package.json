@@ -1,41 +1,24 @@
 {
   "name": "anmar25_dsup_taskly",
   "version": "1.0.0",
-  "description": "Task management API with TypeScript and Prisma",
+  "description": "API de gerenciamento de tarefas",
   "main": "dist/server.js",
-  "type": "commonjs",
   "scripts": {
-    "dev": "nodemon --exec ts-node src/server.ts",
-    "build": "tsc",
+    "dev": "nodemon src/server.ts",
     "start": "node dist/server.js",
-    "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev",
-    "prisma:studio": "prisma studio",
-    "prisma:reset": "prisma migrate reset",
-    "test": "echo \"Error: no tests specified\" && exit 1",
-    "postinstall": "prisma generate"
+    "build": "tsc",
+    "migrate": "prisma migrate dev",
+    "generate": "prisma generate",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rafaelguerrah/ANMAR25_DSUP_TASKLY-.git"
-  },
-  "keywords": [
-    "nodejs",
-    "typescript",
-    "prisma",
-    "rest-api",
-    "sqlite"
-  ],
-  "author": "Your Name",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rafaelguerrah/ANMAR25_DSUP_TASKLY-/issues"
-  },
-  "homepage": "https://github.com/rafaelguerrah/ANMAR25_DSUP_TASKLY-#readme",
   "dependencies": {
     "@prisma/client": "^6.6.0",
-    "express": "^5.1.0",
-    "zod": "^3.24.2"
+    "express": "^4.21.2",
+    "express-async-errors": "^3.1.1",
+    "zod": "^3.24.3"
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
@@ -44,8 +27,5 @@
     "prisma": "^6.6.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
-  },
-  "prisma": {
-    "seed": "ts-node prisma/seed.ts"
   }
 }
