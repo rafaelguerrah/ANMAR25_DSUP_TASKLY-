@@ -11,6 +11,6 @@ router.get('/', (req, res) => {
 
 router.use('/tasks', taskRoutes)
 router.use('/tasks', noteRoutes)
-router.use('/notes', noteRoutes)
+//router.use('/notes', noteRoutes)
 
 export { router as routes }
