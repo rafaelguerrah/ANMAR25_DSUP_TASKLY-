@@ -163,8 +163,8 @@ EXPLORADOR/
 │   │   ├── note.service.ts    
 │   │   └── task.service.ts   
 │   ├── schemas/
-│   │   ├── note.schema.ts    
-│   │   └── task.schema.ts     
+│   │   ├── note.schemas.ts    
+│   │   └── task.schemas.ts     
 │   ├── app.ts              
 │   └── server.ts             
 ├── .env                      
@@ -172,5 +172,5 @@ EXPLORADOR/
 └── tsconfig.json              
 ````
 
-
+>>  Developed by Rafael Guerra Santos <<
 
