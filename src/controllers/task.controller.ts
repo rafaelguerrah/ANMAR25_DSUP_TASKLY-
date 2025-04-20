@@ -31,6 +31,7 @@ export class TaskController {
 
   async findById(req: Request, res: Response): Promise<Response> {
     const { id } = req.params;
+    
     try {
       const task = await prisma.task.findUnique({
         where: { id },
