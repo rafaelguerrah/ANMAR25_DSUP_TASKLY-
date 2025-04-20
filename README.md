@@ -1,90 +1,105 @@
-# 📝 Taskly API - Gerenciamento de Tarefas
+# 📝 Taskly API - Task Management System
 
-API completa para gerenciamento de tarefas e notas, construída com Node.js, Express, Prisma e TypeScript.
+A complete REST API for task and note management built with Node.js, Express, Prisma, and TypeScript.
 
 ---
 
-## 📋 Visão Geral
+## 📋 Overview
 
-O Taskly é uma API RESTful que permite:
+Taskly is a RESTful API that allows you to:
 
-- ✅ Criar, listar, atualizar e excluir tarefas
-- 🗒 Adicionar notas às tarefas
-- 🔍 Filtrar tarefas por status (TODO, IN_PROGRESS, DONE)
-- 📌 Gerenciar prioridades (LOW, MEDIUM, HIGH)
+- ✅ Create, list, update, and delete tasks
+- 🗒 Add notes to tasks
+- 🔍 Filter tasks by status (TODO, IN_PROGRESS, DONE)
+- 📌 Manage priorities (LOW, MEDIUM, HIGH)
 
   ---
   ## 🛠 Tecnologias
-- Node.js (v18+)
-
-- Express (Framework web)
-- Prisma (ORM para SQLite)
-- TypeScript (Tipagem estática)
-- Zod (Validação de dados)
-- Postman (Testes de API)
+  
+- **Node.js** (v18+)
+- **Express** (Web framework)
+- **Prisma** (ORM para SQLite)
+- **TypeScript** (Static typing)
+- **Zod** (Data validation)
+- **Postman**  (API testing)
 
   ---
 
-## 🚀 Começando
-##✅ Pré-requisitos
+##🚀 Getting Started
+
+##✅ Prerequisites
 
 - Node.js 18+
-- npm ou yarn
-- SQLite (embutido, não precisa instalar separadamente)
+- npm or yarn
+- SQLite (embedded, no separate installation required)
 
 ---
 
-## 📦 Instalação
-**Clone o repositório:**
+ ## 📦 Installation
+**Clone the repository:**
 ```bash
-git clone https://github.com/seu-usuario/taskly-api.git
+gh repo clone rafaelguerrah/ANMAR25_DSUP_TASKLY-
 cd taskly-api
 ```
 
-**Instale as dependências:**
+**Install dependencies:**
 ```bash
 npm install
 ```
 
-**Configure o banco de dados:**
+**Configure the database:**
 ```bash
 npx prisma migrate dev --name init
 ```
 
-**Inicie o servidor em desenvolvimento:**
+**Generate the Prisma client:**
+```bash
+npx prisma generate
+```
+
+**View the database:**
+```bash
+npx prisma studio
+```
+
+**Start the development server:**
 ```bash
 npm run dev
 ```
 
 ---
 
-## 🌐 Endpoints da API
+## 🌐  API Endpoints
 
-### 📌 Tarefas (`/tasks`)
+## 📌 Tasks (`/tasks`)
 
-| Método | Endpoint                | Descrição                          |
-|--------|-------------------------|------------------------------------|
-| POST   | `/tasks`                | Cria uma nova tarefa               |
-| GET    | `/tasks`                | Lista todas as tarefas             |
-| GET    | `/tasks/:id`            | Obtém uma tarefa específica        |
-| GET    | `/tasks/status/:status` | Filtra tarefas por status          |
-| PUT    | `/tasks/:id`            | Atualiza uma tarefa                |
-| DELETE | `/tasks/:id`            | Remove uma tarefa                  |
+### Endpoints
 
-### 🗒 Notas (/notes)
+| Method | Endpoint                  | Description            |
+|--------|---------------------------|------------------------|
+| POST   | `/tasks`                  | Create a new task      |
+| GET    | `/tasks`                  | List all tasks         |
+| GET    | `/tasks/:id`              | Get a specific task    |
+| GET    | `/tasks/status/:status`   | Filter tasks by status |
+| PUT    | `/tasks/:id`              | Update a task          |
+| DELETE | `/tasks/:id`              | Remove a task          |
 
-| Método | Endpoint                | Descrição                          |
-|--------|-------------------------|------------------------------------|
-| POST   | `/:taskId/notes`        | Adiciona uma nota à tarefa         |
-| GET    | `/:taskId/notes`        | Lista todas as notas da tarefas    |
-| GET    | `/notes/:id`            | Obtém uma nota específica          |
-| PUT    | `/notes/:id`            | Atualiza uma nota                  |
-| DELETE | `/notes/:id`            | Deleta uma nota                    |
+## 🗒 Notes (`/notes`)
+
+### Endpoints
+
+| Method | Endpoint                  | Description              |
+|--------|---------------------------|--------------------------|
+| POST   | `/:taskId/notes`          | Add a note to a task     |
+| GET    | `/:taskId/notes`          | List all notes for a task|
+| GET    | `/notes/:id`              | Get a specific note      |
+| PUT    | `/notes/:id`              | Update a note            |
+| DELETE | `/notes/:id`              | Delete a note            |
 
 ---
 
-## Exemplo de endepoints
-## Create tarefa
+## Example Endpoints
+## Create Task
 
 **POST** `http://localhost:3000/tasks`
 
@@ -119,7 +134,7 @@ npm run dev
 **Request:**
 ```json
 {
-  "content": "Revisar middleware de autenticação"
+  "content": "Review authentication middleware"
 }
 ```
 
@@ -128,11 +143,12 @@ npm run dev
 ```json
 {
     "id": "8ae744e0-0505-4ffd-ae0e-05c95b40c84d",
-    "content": "Revisar middleware de autenticação",
+    "content": "Review authentication middleware",
     "taskId": "69b29b0c-e505-4582-a23f-dadd021cedfe",
     "createdAt": "2025-04-20T02:27:24.316Z",
     "updatedAt": "2025-04-20T02:27:24.316Z"
 }
+
 ```
 
 ---
@@ -171,6 +187,36 @@ EXPLORADOR/
 ├── package.json               
 └── tsconfig.json              
 ````
+---
 
->>  Developed by Rafael Guerra Santos <<
+### 🔴Possible Errors and Solutions
 
+1. Prisma Migration Errors Problem:
+   
+Failed to execute migrations or generate Prisma client Solution:
+```bash
+npx prisma migrate dev --name init
+npx prisma generate
+```
+
+2.Database Connection Issues Problem: Errors connecting to SQLite Solution:
+
+- Ensure the dev.db file exists in the root directory
+- Check the database file permissions
+
+3. TypeScript Type Errors Problem: TypeScript compilation errors Solution:
+```bash
+npm run build
+```
+Or for development:
+```bash
+npm run dev
+```
+
+4. Missing Dependencies Problem: Modules not found Solution:
+```bash
+npm install
+```
+---
+
+>> Developed by **Rafael Guerra Santos** <<
