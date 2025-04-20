@@ -25,7 +25,7 @@ O Taskly é uma API RESTful que permite:
 
   ---
 
- ## 🚀 Começando
+## 🚀 Começando
 ##✅ Pré-requisitos
 
 - Node.js 18+
@@ -34,7 +34,7 @@ O Taskly é uma API RESTful que permite:
 
 ---
 
- ## 📦 Instalação
+## 📦 Instalação
 **Clone o repositório:**
 ```bash
 git clone https://github.com/seu-usuario/taskly-api.git
