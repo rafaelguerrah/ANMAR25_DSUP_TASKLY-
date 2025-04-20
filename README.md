@@ -111,3 +111,66 @@ npm run dev
     "updatedAt": "2025-04-20T02:18:58.082Z"
 }
 ```
+
+## Criando nota a uma tarefa:
+
+**POST** `http://localhost:3000/tasks/69b29b0c-e505-4582-a23f-dadd021cedfe/notes`
+
+**Request:**
+```json
+{
+  "content": "Revisar middleware de autenticação"
+}
+```
+
+**Response:**
+- 201 Created:
+```json
+{
+    "id": "8ae744e0-0505-4ffd-ae0e-05c95b40c84d",
+    "content": "Revisar middleware de autenticação",
+    "taskId": "69b29b0c-e505-4582-a23f-dadd021cedfe",
+    "createdAt": "2025-04-20T02:27:24.316Z",
+    "updatedAt": "2025-04-20T02:27:24.316Z"
+}
+```
+
+---
+
+📁 Folder Structure
+````
+EXPLORADOR/
+├── prisma/
+│   └── schema.prisma          
+├── src/
+│   ├── controllers/
+│   │   ├── note.controller.ts 
+│   │   └── task.controller.ts 
+│   ├── database/
+│   │   └── prisma.ts         
+│   ├── middlewares/
+│   │   └── error.middleware.ts 
+│   ├── models/
+│   │   └── task.ts            
+│   ├── repositories/
+│   │   ├── note.repository.ts  
+│   │   └── task.repository.ts 
+│   ├── routes/
+│   │   ├── index.ts          
+│   │   ├── note.routes.ts     
+│   │   └── task.routes.ts     
+│   ├── services/
+│   │   ├── note.service.ts    
+│   │   └── task.service.ts   
+│   ├── schemas/
+│   │   ├── note.schema.ts    
+│   │   └── task.schema.ts     
+│   ├── app.ts              
+│   └── server.ts             
+├── .env                      
+├── package.json               
+└── tsconfig.json              
+````
+
+
+
