@@ -3,7 +3,12 @@ import { prisma } from '../database/prisma';
 
 export class TaskController {
   async create(req: Request, res: Response): Promise<Response> {
+
     const { title, description, status } = req.body;
+
+    if (!title || !description || !status) {
+    return res.status(400).json({ error: 'Missing required parameters' });
+  }
     try {
       const task = await prisma.task.create({
         data: {
