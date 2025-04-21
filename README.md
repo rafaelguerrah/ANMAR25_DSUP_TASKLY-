@@ -90,11 +90,11 @@ npm run dev
 
 | Method | Endpoint                  | Description              |
 |--------|---------------------------|--------------------------|
-| POST   | `/:taskId/notes`          | Add a note to a task     |
-| GET    | `/:taskId/notes`          | List all notes for a task|
-| GET    | `/notes/:id`              | Get a specific note      |
-| PUT    | `/notes/:id`              | Update a note            |
-| DELETE | `/notes/:id`              | Delete a note            |
+| POST   | `/tasks/:taskId/notes`    | Add a note to a task     |
+| GET    | `/tasks/:taskId/notes`    | List all notes for a task|
+| GET    | `/tasks/notes/:id`        | Get a specific note      |
+| PUT    | `/tasks/notes/:id`        | Update a note            |
+| DELETE | `/tasks/notes/:id`        | Delete a note            |
 
 ---
 
