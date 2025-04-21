@@ -217,6 +217,15 @@ npm run dev
 ```bash
 npm install
 ```
+
+ ## 🟢🔴  HTTP Status Codes
+
+- 200 OK: The request was successful and the response contains the data or confirmation of the operation (e.g.: GET, PUT, DELETE).
+- 201 Created: The request was successful and a new resource was created (e.g.: creation of a task or note).
+- 400 Bad Request: The request contains errors, such as invalid or missing parameters.
+- 404 Not Found: The requested resource was not found (e.g.: nonexistent task or note).
+- 500 Internal Server Error: A server error occurred while processing the request.
+
 ---
 
 >> Developed by **Rafael Guerra Santos** <<
